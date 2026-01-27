@@ -1,0 +1,235 @@
+@charset "utf-8";
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  line-height: 1.5;
+  font-size: 1.6rem;
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans", Meiryo, sans-serif;
+  text-align: center;
+  background-image: url(../img/backimg.JPG);
+  background-size: cover;
+  background-color: rgba(233, 168, 227, 0.6);
+}
+
+header,
+main,
+footer,
+h1,
+h2,
+h3,
+p,
+div,
+table,
+.field,
+.btn-area,
+.filler01 {
+  margin: 0.5em 0em;
+  padding: 0.1em;
+}
+
+/* 見出し */
+h1 {
+  color: rgb(165, 243, 243);
+}
+
+h2 {
+  color: whitesmoke;
+  font-weight: 1000;
+}
+
+/* KEY 入力エリア */
+.field01 {
+  position: relative;
+  height: 5em;
+}
+
+/* MEMO 入力エリア */
+.field02 {
+  position: relative;
+  height: 10em;
+}
+
+/* ラベル */
+label {
+  position: absolute;
+  left: 0.5em;
+  color: whitesmoke;
+  font-weight: 1000;
+}
+
+/* 「必須」マーク */
+label::after {
+  margin-left: 1em;
+  padding: 0 6px;
+  border-radius: 4px;
+  font-size: 0.6em;
+  color: white;
+  background-color: #c44;
+  content: "必須";
+}
+
+/* テキストエリア */
+textarea {
+  position: absolute;
+  top: 2em;
+  left: 3em;
+}
+
+/* プレースホルダーカラー */
+textarea::placeholder {
+  color: #46aef7;
+}
+
+/* ボタン */
+.btn-area {
+  margin-left: 3em;
+  text-align: left;
+}
+
+#save,
+#select,
+#del,
+#allclear {
+  padding: 0.5em;
+  border-radius: 0.3em;
+  color: whitesmoke;
+  font-size: 1em;
+  background: rgb(26, 212, 212);
+  cursor: pointer;
+}
+
+#save:hover,
+#select:hover,
+#del:hover,
+#allclear:hover {
+  background: rgb(20, 180, 180);
+}
+
+table {
+  table-layout: fixed;
+  width: 80%;
+  margin-left: 3em;
+  border-collapse: collapse;
+  opacity: 0.9;
+}
+
+table th {
+  background: grey;
+}
+
+table th,
+table td {
+  padding: 0.5em 0;
+  border: solid 0.1em #fff;
+  color: white;
+  text-align: center;
+}
+
+table tr {
+  background: #46aef7;
+}
+
+.width10 {
+  width: 10%;
+}
+
+.width30 {
+  width: 30%;
+}
+
+.width60 {
+  width: 60%;
+}
+
+/* backボタン */
+.back {
+  text-align: left;
+}
+
+#btn99 {
+  padding: 0.5em;
+  border-radius: 0.3em;
+  color: whitesmoke;
+  font-size: 1.5em;
+  background: rgb(26, 212, 212);
+  cursor: pointer;
+}
+
+#btn99:hover {
+  background: rgb(20, 180, 180);
+}
+
+/* SweetAlert2 - Beautiful Colors */
+.swal2-popup {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  border-radius: 15px !important;
+}
+
+.swal2-title {
+  color: white !important;
+  font-weight: bold !important;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.swal2-content,
+.swal2-html-container {
+  color: white !important;
+  font-weight: 500 !important;
+}
+
+.swal2-icon {
+  border-color: white !important;
+}
+
+.swal2-icon.swal2-success .swal2-success-ring {
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.swal2-icon.swal2-success [class^='swal2-success-line'] {
+  background-color: white !important;
+}
+
+.swal2-icon.swal2-error [class^='swal2-x-mark-line'] {
+  background-color: white !important;
+}
+
+.swal2-icon.swal2-warning {
+  border-color: white !important;
+  color: white !important;
+}
+
+.swal2-icon.swal2-info {
+  border-color: white !important;
+  color: white !important;
+}
+
+.swal2-icon.swal2-question {
+  border-color: white !important;
+  color: white !important;
+}
+
+/* SweetAlert2 Buttons */
+.swal2-confirm {
+  background-color: #1ad4d4 !important;
+  border: none !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3) !important;
+}
+
+.swal2-confirm:hover {
+  background-color: #14b4b4 !important;
+}
+
+.swal2-cancel {
+  background-color: rgba(255, 255, 255, 0.3) !important;
+  border: 2px solid white !important;
+  color: white !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3) !important;
+}
+
+.swal2-cancel:hover {
+  background-color: rgba(255, 255, 255, 0.5) !important;
+}
