@@ -1,2 +1,0 @@
-# mobileapp
-mobile application
