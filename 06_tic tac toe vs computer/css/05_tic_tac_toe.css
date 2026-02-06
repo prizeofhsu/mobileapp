@@ -1,0 +1,268 @@
+@charset "utf-8";
+
+html {
+    font-size: 16px;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    line-height: normal;
+    font-family: "Helvetica Neue",
+        Arial,
+        "Hiragino Kaku Gothic ProN",
+        "Hiragino Sans",
+        Meiryo,
+        sans-serif;
+    background: rgb(233, 168, 227);
+    overflow: hidden;
+}
+
+p{
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    position: relative;
+    margin-top: 8px;
+    color: rgb(255, 251, 0);
+    font-size: 38px;
+    font-weight: bold;
+    text-align: center;
+    background: rgb(71, 71, 71);
+    padding: 10px 0;
+}
+
+#back-btn {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 8px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    background-color: #6CE5E8;
+    border: 1px solid #666;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#back-btn:hover {
+    background-color: #5DD5D8;
+    transform: translateY(-50%) translateY(-1px);
+}
+
+#back-btn:active {
+    transform: translateY(-50%);
+    background-color: #4DC5C8;
+}
+
+.wrapper {
+    position: relative;
+    max-width: 100vw;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 23px;
+    text-align: center;
+}
+
+.game-container {
+    padding: 40px 0;
+}
+
+.squares-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: 200px;
+}
+
+.squares-box {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    border: solid 1px #333;
+}
+
+.square {
+    position: relative;
+    width: calc(198px / 3);
+    height: calc(198px / 3);
+    border: solid 2px #333;
+    background-color: transparent;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.message-container {
+    min-height: 40px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* アニメーション用のクラス */
+#msgtext {
+    display: inline-block;
+}
+
+/* ペンギン勝利メッセージのアニメーション（右から） */
+.win-animation-right {
+    animation: slideInFromRight 0.8s ease-out;
+}
+
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(100vw);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* 白熊勝利メッセージのアニメーション（左から） */
+.win-animation-left {
+    animation: slideInFromLeft 0.8s ease-out;
+}
+
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-100vw);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* 引き分けメッセージのアニメーション（上から） */
+.draw-animation {
+    animation: slideInFromTop 0.8s ease-out;
+}
+
+@keyframes slideInFromTop {
+    from {
+        transform: translateY(-100vh);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.js-pen-checked {
+    background-image: url(../img/penguins.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.js-bear-checked {
+    background-image: url(../img/whitebear.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.js-clickable {
+    cursor: pointer;
+}
+
+.js-unclickable {
+    pointer-events: none;
+}
+
+/* Highlight styles for winning lines */
+.js-pen_highLight {
+    border: 3px solid #ff6b00;
+    box-shadow: 0 0 10px #ff6b00;
+}
+
+.js-bear_highLight {
+    border: 3px solid #00d4ff;
+    box-shadow: 0 0 10px #00d4ff;
+}
+
+
+#newgame-btn {
+    margin-top: 20px;
+}
+
+#btn90 {
+    padding: 10px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    background-color: #6CE5E8;
+    border: 1px solid #666;  
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#btn90:hover {
+    background-color: #5DD5D8;
+    transform: translateY(-1px);
+}
+
+#btn90:active {
+    transform: translateY(0);
+    background-color: #4DC5C8;
+}
+
+/* Hidden class */
+.js-hidden {
+    display: none;
+}
+
+footer p {
+    position: absolute;
+    bottom: 5px;
+    width: 100%;
+    margin: 0px;
+    padding: 1px;
+    color: whitesmoke;
+    font: 16px RaziKhani;
+    text-align: center;
+    background: rgba(1, 24, 31, 0.7);
+}
+
+#current-player-img {
+    margin: 10px auto 20px auto;
+    width: 100px;
+    height: 100px;
+}
+
+#player-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* 引き分け時の両方の画像表示用 */
+.draw-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.draw-icons img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 10px;
+}
